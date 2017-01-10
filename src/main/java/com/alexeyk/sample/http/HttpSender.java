@@ -13,7 +13,7 @@ public class HttpSender {
         String url = String.format("%s/%s", "http://www.newsru.com", "index.html");
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-        headers.add("Accept", "*/*");
+        headers.add(HttpHeaders.ACCEPT, "*/*");
         HttpEntity<String> requestEntity = new HttpEntity<>("body", headers);
 
         ResponseEntity<String> responseEntity = template.exchange(url, HttpMethod.GET, requestEntity, String.class);
